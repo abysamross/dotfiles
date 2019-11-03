@@ -80,7 +80,7 @@ mode $exit_mod {
 	#bindsym l exec --no-startup-id i3lock, mode "default"
 	bindsym s exec --no-startup-id i3lock -e -f -u -p win -i ~/.i3/images/powerButton.png && systemctl suspend, mode "default"
 	bindsym Shift+e exec i3-msg exit, mode "default"
-	bindsym Shift+p exec systmctl poweroff, mode "default"
+	bindsym Shift+p exec systemctl poweroff, mode "default"
 	bindsym Shift+r exec systemctl reboot, mode "default"
 	#bindsym Shift+p exec ~/.i3/poweroff, mode "default"
 	#bindsym Shift+r exec ~/.i3/reboot, mode "default"
