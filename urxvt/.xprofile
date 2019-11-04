@@ -1,0 +1,2 @@
+#compton -i 0.9 --active-opacity 1 -b
+compton --active-opacity 1 -b
