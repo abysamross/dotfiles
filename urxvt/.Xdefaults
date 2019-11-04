@@ -12,12 +12,15 @@ URxvt*buffered: true
 ! cursor
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
-URxvt*font:  xft:inconsolata:size=14:antialias=true
+
+! font
+URxvt*font: xft:Inconsolata\ for\ \Powerline:size=14:antialias=true
 URxvt*depth: 32
 
 ! scroll
 URxvt*scrollBar: false
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+URxvt*mouseWheelScrollPage: true
 
 ! perl extensions
 URxvt.perl-ext-common: default,matcher,keyboard-select
@@ -46,7 +49,7 @@ URxvt.urlLauncher: chromium-browser
 
 ! General Settings --- end ---!}}}
 
-! Colorscheme --- begin ---!{{{
+!! Colorscheme --- begin ---!{{{
 
 ! special
 *.foreground: #93a1a1
@@ -85,4 +88,4 @@ URxvt.urlLauncher: chromium-browser
 *.color7: #bfbaac
 *.color15: #fdf6e3
 
-! Colorscheme --- end ---!}}}
+!! Colorscheme --- end ---!}}}

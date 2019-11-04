@@ -136,22 +136,28 @@ bar {
 
 # Launch Commands  ---begin---#{{{ 
 
-#bindsym $mod+i exec /home/diana/Desktop/firefox/firefox
+# Launch Web Browser
+bindsym $mod+i exec chromium-browser
+
 # Launch file manager
 #bindsym $mod+b exec dbus-launch thunar
+
 # Launch VMM manager
 #bindsym $mod+v exec virt-manager
+
 # start a terminal
-#bindsym $mod+Return exec gnome-terminal #i3-sensible-terminal
 bindsym $mod+Return exec urxvt 
+
 # kill focused window
 bindsym $mod+q kill
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
+
 # start dmenu (a program launcher)
 bindsym $mod4+x exec dmenu_run
+
+# There also is the (new) i3-dmenu-desktop 
+# which only displays applications shipping a .desktop file.
+# It is a wrapper around dmenu, so you need that installed.
+bindsym $mod+x exec --no-startup-id i3-dmenu-desktop
 
 # Launch Commands ---end---#}}}
 
