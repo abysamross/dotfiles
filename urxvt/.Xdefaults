@@ -1,0 +1,88 @@
+! urxvt
+
+! General Settings --- begin ---!{{{
+
+! term
+URxvt*borderless: 1
+URxvt*loginShell: true
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt*buffered: true
+
+! cursor
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt*font:  xft:inconsolata:size=14:antialias=true
+URxvt*depth: 32
+
+! scroll
+URxvt*scrollBar: false
+Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+
+! perl extensions
+URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.matcher.button: 1
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keyboard-select.clipboard: true
+
+! keyboard-select Help --- begin ---!{{{
+
+!!h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
+!!g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E: More vi-like cursor movement keys
+!!'/'/?:      Start forward/backward search
+!!n/N:        Repeat last search, N: in reverse direction
+!!Ctrl-f/b:   Scroll down/up one screen
+!!Ctrl-d/u:   Scroll down/up half a screen
+!!v/V/Ctrl-v: Toggle normal/linewise/blockwise selection
+!!y/Return:   Copy selection to primary buffer, Return: quit afterwards
+!!Y:          Copy selected lines to primary buffer or cursor line and quit
+!!q/Escape:   Quit keyboard selection mode
+
+! keyboard-select Help --- end ---!}}}
+
+! url launcher
+URxvt.urlLauncher: chromium-browser
+
+! General Settings --- end ---!}}}
+
+! Colorscheme --- begin ---!{{{
+
+! special
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
+
+! black
+*.color0: #263640
+*.color8: #4a697d
+
+! red
+*.color1: #d12f2c
+*.color9: #fa3935
+
+! green
+*.color2: #819400
+*.color10: #a4bd00
+
+! yellow
+*.color3: #b08500
+*.color11: #d9a400
+
+! blue
+*.color4: #2587cc
+*.color12: #2ca2f5
+
+! magenta
+*.color5: #696ebf
+*.color13: #8086e8
+
+! cyan
+*.color6: #289c93
+*.color14: #33c5ba
+
+! white
+*.color7: #bfbaac
+*.color15: #fdf6e3
+
+! Colorscheme --- end ---!}}}
