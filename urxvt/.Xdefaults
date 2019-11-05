@@ -22,9 +22,22 @@ URxvt*scrollBar: false
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*mouseWheelScrollPage: true
 
-! perl extensions
-URxvt.perl-ext-common: default,matcher,keyboard-select
+! url launcher
+URxvt.urlLauncher: chromium-browser
+
+! General Settings --- end ---!}}}
+
+! perl extensions --- start ---!{{{
+
+URxvt.perl-ext-common: default,matcher,keyboard-select,fork-here
+
+! matcher
 URxvt.matcher.button: 1
+
+! fork new terminal in the PWD
+URxvt.keysym.M-Shift-Return: perl:fork-here:fork-at-cwd
+
+! select, search vimlike the terminal output
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keyboard-select.clipboard: true
@@ -44,10 +57,9 @@ URxvt.keyboard-select.clipboard: true
 
 ! keyboard-select Help --- end ---!}}}
 
-! url launcher
-URxvt.urlLauncher: chromium-browser
+! perl extensions --- end ---!}}}
 
-! General Settings --- end ---!}}}
+
 
 !! Colorscheme --- begin ---!{{{
 
