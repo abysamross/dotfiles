@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'				"vundle
 Plugin 'mbbill/undotree'					"show undotree				
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'muralisc/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 
 "vundle setup --end--"}}}
