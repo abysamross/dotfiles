@@ -64,9 +64,9 @@ bindsym $mod+Shift+r restart
 # Background and Lock Screen ---begin---#{{{
 
 #lock the screen
-bindsym $mod+Ctrl+l exec --no-startup-id i3lock -e -f -u -p win -i ~/.i3/images/powerButton.png, mode "default"
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock -e -f -u -p win -i ~/.i3/images/linux_lock_screen.png, mode "default"
 
-exec --no-startup-id feh --bg-max ~/.i3/images/anonymous.png
+exec --no-startup-id feh --bg-max ~/.i3/images/gnu_linux_wallpaper.png
 
 # Background and Lock Screen ---end---#}}}
 
