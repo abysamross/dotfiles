@@ -14,7 +14,8 @@ URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
 
 ! font
-URxvt*font: xft:Inconsolata\ for\ \Powerline:size=14:antialias=true
+!URxvt*font: xft:Inconsolata\ for\ Powerline:size=15:antialias=true
+URxvt*font: xft:Droid\ Sans\ Mono\ for\ Powerline:size=14:antialias=true
 URxvt*depth: 32
 
 ! scroll
@@ -58,8 +59,6 @@ URxvt.keyboard-select.clipboard: true
 ! keyboard-select Help --- end ---!}}}
 
 ! perl extensions --- end ---!}}}
-
-
 
 !! Colorscheme --- begin ---!{{{
 
