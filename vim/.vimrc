@@ -8,6 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'				"vundle
 Plugin 'mbbill/undotree'					"show undotree
 Plugin 'vim-airline/vim-airline'
+Plugin 'muralisc/vim-colorschemes'
+Plugin 'christoomey/vim-tmux-navigator'     "navigate between tmux panes and vim splits
 call vundle#end()
 
 "vundle setup --end--"}}}
@@ -63,6 +65,18 @@ nnoremap <F5> :UndotreeToggle<cr>   "undotree keymap
 
 "undotree keymap --end--"}}}
 
+"vim-tmux-navigtor keymap --begin--"{{{
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
+
+"vim-tmux-navigator keymap --end--"}}}
+"
 "custom keymap --end--"}}}
 
 "syntax, filetype, indent etc --begin--"{{{
@@ -105,9 +119,9 @@ set directory=/var/tmp      "directory for .swp files
 
 "color scheme, colorcolumn etc --begin--"{{{
 
-"set colorcolumn after column 80
-silent execute "set colorcolumn=" . join(range(81,169), ',')
 colorscheme desert                                              "the chosen color scheme
+"set colorcolumn after column 80
+silent execute "set colorcolumn=" . join(range(81,267), ',')
 hi CursorLine cterm=bold 	                                    "get rid of the underline because of cursorline
 hi ColorColumn ctermbg=236	                                    "colorcolumn bg color
 
