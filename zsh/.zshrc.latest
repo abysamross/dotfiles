@@ -51,7 +51,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# zsh-autosuggestions --- end --- }}}
+# zsh-syntax-highlighting --- end --- }}}
 
 # CLICOLOR --- begin --- {{{
 
