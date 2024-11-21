@@ -1,0 +1,79 @@
+# Set prefix key combo as C-a rather than C-b
+unbind C-b
+set -g prefix  C-a
+bind C-a send-prefix
+
+# Enable Mouse
+set -g mouse on
+
+# Address vim mode switching delays
+set -s escape-time 0
+
+# Set history limit
+set -g history-limit 99999 
+
+# Start Window/Pane indexing at 1 instead of 0
+set -g base-index 1
+set -g pane-base-index 1
+
+# Status bar -- installed using "pip install --user powerline-status"
+source "${HOME}/.local/lib/python3.10/site-packages/powerline/bindings/tmux/powerline.conf"
+ 
+# Set vim mode
+set-window-option -g mode-keys vi
+
+# Split Window and create Pane
+bind v split-window -h -c "#{pane_current_path}"
+bind h split-window -v -c "#{pane_current_path}"
+
+# hjkl pane resize
+bind -n M-C-h resize-pane -L 2
+bind -n M-C-j resize-pane -D 2
+bind -n M-C-k resize-pane -U 2
+bind -n M-C-l resize-pane -R 2
+
+# Switch Windows alt+number
+bind -n M-1 select-window -t 1
+bind -n M-2 select-window -t 2
+bind -n M-3 select-window -t 3
+bind -n M-4 select-window -t 4
+bind -n M-5 select-window -t 5
+bind -n M-6 select-window -t 6
+bind -n M-7 select-window -t 7
+bind -n M-8 select-window -t 8
+bind -n M-9 select-window -t 9
+
+# Toggle Synchronize panes - send same input to all panes!
+bind a set-window-option synchronize-panes \; display "sync toggle"
+
+# Navigate between tmux panes and vim splits easily.
+# See: https://github.com/christoomey/vim-tmux-navigator
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+bind-key -n 'M-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
+bind-key -n 'M-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
+bind-key -n 'M-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
+bind-key -n 'M-l' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
+tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
+if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
+    "bind-key -n 'M-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
+if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
+    "bind-key -n 'M-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+
+# Allow navigation between tmux panes and vim splits in copy-mode-vi
+bind-key -T copy-mode-vi 'M-h' select-pane -L
+bind-key -T copy-mode-vi 'M-j' select-pane -D
+bind-key -T copy-mode-vi 'M-k' select-pane -U
+bind-key -T copy-mode-vi 'M-l' select-pane -R
+bind-key -T copy-mode-vi 'M-\' select-pane -l
+
+# Set vim copy-selection mode
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
+# Reload Configuration
+bind r source-file ~/.tmux.conf \; display "Reloading TMUX Config..."
+
+# powerline
+source ~/.tmux.powerline.conf
